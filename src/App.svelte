@@ -73,7 +73,7 @@
 	<div class="container py-5">
 		<div class=" row">
 			<div class="col-xl-6 mx-auto">
-				<h4 class="mb-2 fw-normal">Todo App By Svelt.js</h4>
+				<h4 class="mb-2 fw-normal">Todo App By Svelte.js</h4>
 				<img src="https://svelte.dev/svelte-logo-horizontal.svg" class="mb-3 img-fluid" alt="logo" />
 				<h5 class="mb-2 fw-normal">Task Length : {todoList.length}</h5>
 				<div class="todo-app d-flex align-items-center gap-1">
