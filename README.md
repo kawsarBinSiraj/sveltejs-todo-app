@@ -1,5 +1,5 @@
 ## Demo : https://svelte-js-todo-app.netlify.app/
-![svelt](https://user-images.githubusercontent.com/38612699/150666408-51b339c0-64e7-490e-a14e-e0fbb2f1aedf.png)
+![svelte](https://user-images.githubusercontent.com/38612699/150670012-d86b0661-3159-43bc-b91f-ab75e1be9321.png)
 
 *Psst — looking for a more complete solution? Check out [SvelteKit](https://kit.svelte.dev), the official framework for building web applications of all sizes, with a beautiful development experience and flexible filesystem-based routing.*
 
