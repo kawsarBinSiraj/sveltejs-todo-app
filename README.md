@@ -1,3 +1,4 @@
+![svelt](https://user-images.githubusercontent.com/38612699/150666408-51b339c0-64e7-490e-a14e-e0fbb2f1aedf.png)
 
 ## Demo : https://sveltjs-todo-app.netlify.app/
 
