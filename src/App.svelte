@@ -7,9 +7,14 @@
 	let editId = null;
 
 	function addToList() {
-		isEdit === false ? (todoList = [...todoList, { text: todo, isDone: false, id: new Date().getTime() }]) : updateTodo();
-		todo = '';
-		toasts.success('Successfully Added', { duration: 2500 });
+		if (todo.length < 1) return alert('Write Something First !!');
+		if (isEdit === false) {
+			todoList = [...todoList, { text: todo, isDone: false, id: new Date().getTime() }];
+			todo = '';
+			toasts.success('Successfully Added', { duration: 2500 });
+		} else {
+			updateTodo();
+		}
 	}
 
 	function removeFromList(index) {
@@ -27,9 +32,8 @@
 		let newTodoList = todoList.map((t, i) => {
 			if (editId === t.id) {
 				return {
+					...t,
 					text: todo,
-					isDone: t.isDone,
-					id: t.id,
 				};
 			} else {
 				return {
@@ -38,10 +42,10 @@
 			}
 		});
 
+		todoList = newTodoList;
 		isEdit = false;
 		todo = '';
 		editId = null;
-		todoList = newTodoList;
 		toasts.success(`Successfully Updated `, { duration: 2500 });
 	}
 
@@ -49,8 +53,8 @@
 		let newTodoList = todoList.map((t, i) => {
 			if (id === t.id) {
 				return {
-					...t ,
-					isDone : !t.isDone
+					...t,
+					isDone: !t.isDone,
 				};
 			} else {
 				return {
@@ -79,8 +83,8 @@
 					</button>
 				</div>
 				<div class="todos-view mt-3">
-					{#each todoList as { text, id , isDone }, index}
-						<div key={id} class="todo-item py-1 border-bottom d-flex align-items-center justify-content-between gap-3">
+					{#each todoList as { text, id, isDone }, index (index)}
+						<div current={id} class="todo-item py-1 border-bottom d-flex align-items-center justify-content-between gap-3">
 							<p style={`${isDone ? 'text-decoration : line-through' : ''}`} class={`mb-0`}>{text}</p>
 							<div class="todo-action">
 								<button on:click={() => editFromList(text, id)} type="button" class="btn btn-sm text-light mb-0 p-1 btn-info">Edit</button>
